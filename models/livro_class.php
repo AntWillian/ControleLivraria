@@ -60,6 +60,48 @@
     }
 
 
+    public function listarPorId($dados){
+     $sql="select * from tbl_livro where idlivro=".$dados->idlivro;
+   //  echo $sql;
+
+     $conex = new Mysql_db();
+
+     $PDO_conex = $conex->Conectar();
+
+     $select = $PDO_conex->query($sql);
+
+
+
+     if ($rs=$select->fetch(PDO::FETCH_ASSOC)) {
+       $listLivro = new Livro();
+
+
+
+         $listLivro->idlivro = $rs['idlivro'];
+         $listLivro->titulo = $rs['titulo'];
+         $listLivro->autor = $rs['autor'];
+         $listLivro->descricao = $rs['descricao'];
+         $listLivro->editora = $rs['editora'];
+         $listLivro->numPaginas = $rs['numPaginas'];
+         $listLivro->numEdicoes = $rs['numEdicoes'];
+         $listLivro->anoEdicao = $rs['anoEdicao'];
+         $listLivro->estoque = $rs['estoque'];
+         $listLivro->preco = $rs['preco'];
+         $listLivro->imagem = $rs['imagem'];
+
+
+         
+     }
+
+     $conex->Desconectar();
+
+     if (isset($listLivro)) {
+         return $listLivro;
+     }
+
+   }
+
+
     // CADASTRO DE NOVO Livro
     public function Insert($dados){
       $sql="insert into tbl_livro (titulo, autor, descricao, editora, numPaginas, numEdicoes, anoEdicao, estoque, preco, imagem)

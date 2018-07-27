@@ -10,6 +10,16 @@
 
      }
 
+     public function listarPorId($id){
+          $livro = new Livro();
+         $iddado=$id;
+
+         //echo $idCai;
+         $livro->idlivro=$iddado;
+         return $livro::listarPorId($livro);
+
+       }
+
 
      public function Novo(){
 

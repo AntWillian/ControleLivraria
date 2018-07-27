@@ -9,9 +9,11 @@
 	<link rel="icon" href="images/favicon.ico" type="image/ico" />
 
     <title>Gentelella Alela! | </title>
-
+    <script  src="../js/jquery-3.3.1.min.js"></script>
     <!-- Bootstrap -->
     <link href="../vendors/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="css/style.css" rel="stylesheet">
+
     <!-- Font Awesome -->
     <link href="../vendors/font-awesome/css/font-awesome.min.css" rel="stylesheet">
     <!-- NProgress -->
@@ -36,15 +38,101 @@
     <link href="../vendors/datatables.net-responsive-bs/css/responsive.bootstrap.min.css" rel="stylesheet">
     <link href="../vendors/datatables.net-scroller-bs/css/scroller.bootstrap.min.css" rel="stylesheet">
 
+
+    <!-- script  -->
+
+  <script>
+      $(document).ready(function () {
+
+
+        //Efeito para abrir a div Container com timer de 2 segundos (Novo Registro)
+        $(".novo").click(function(){
+           $(".modalContainer").slideToggle(2000);
+
+        });
+
+        //Efeito para abrir a div Container com timer de 2 segundos
+          $(".editar").click(function(){
+             $(".modalContainer").fadeIn(2000);
+
+          });
+
+
+          //Efeito para abrir a div Container com timer de 2 segundos
+            $(".visualizar").click(function(){
+               $(".modalContainer").fadeIn(2000);
+
+            });
+
+
+
+      });
+
+      function Editar(idItem){
+
+        $.ajax({
+          type: "GET",
+          url: "cadastro_produto.php",
+          data: {modo:'buscarId',idProduto:idItem},
+          success: function(dados){
+            $('.modal2').html(dados);
+          }
+
+        });
+      }
+
+      function Visualizar(idItem){
+
+        $.ajax({
+          type: "GET",
+          url: "visualizarLivro.php",
+          data: {modo:'buscarId',idlivro:idItem},
+          success: function(dados){
+            $('.modalAparecer1').html(dados);
+          }
+
+        });
+      }
+
+      function Excluir(idIten){
+
+        var resposta;
+
+        resposta = confirm('Deseja excluir?');
+
+        if (resposta==true)
+        {
+        //alert(idIten);
+          $.ajax({
+              type: "GET",
+              url: "router.php?controller=produtos&modo=excluir&idProduto="+idIten,
+              // data: {modo:'excluir',id:idIten},
+              success: function(dados){
+                  $('.dadosDaMovimentacao').html(dados);
+                  //alert ();
+              }
+          });
+        }
+      }
+  </script>
+
+
   </head>
 
   <body class="nav-md">
+
+    <div class="modalContainer">
+      <div class="modalAparecer1">
+
+      </div>
+    </div>
+
     <div class="container body">
       <div class="main_container">
         <div class="col-md-3 left_col">
           <div class="left_col scroll-view">
             <div class="navbar nav_title" style="border: 0;">
-              <a href="index.html" class="site_title"><i class="fas fa-book-reader" src="../imagenms/book.png">  </i> <span>Livraria</span></a>
+              <a href="index.html" class="site_title"><i class="fas fa-book-reader"> </i> <span>Livraria</span></a>
             </div>
 
             <div class="clearfix"></div>
@@ -228,8 +316,8 @@
                         <td><?php echo (utf8_decode($Livro[$cont]->editora)); ?></td>
                         <td><?php echo (utf8_decode($Livro[$cont]->estoque)); ?></td>
                         <td><?php echo (utf8_decode($Livro[$cont]->preco)); ?></td>
-                        <td><div class="fa-hover col-md-3 col-sm-4 col-xs-12"><a href="#/pencil-square-o"><i class="fa fa-edit"></i></a></div>
-                          <div class="fa-hover col-md-3 col-sm-4 col-xs-12"><a href="#/eye"><i class="fa fa-eye"></i></a></div>
+                        <td><div class="fa-hover col-md-3 col-sm-4 col-xs-12"><a href="#/pencil-square-o" class="editar" onclick="Editar(<?php echo $Livro[$cont]->idlivro?>)"><i class="fa fa-edit"></i></a></div>
+                          <div class="fa-hover col-md-3 col-sm-4 col-xs-12"><a href="#" onclick="Visualizar(<?php echo $Livro[$cont]->idlivro?>)"><i class="fa fa-eye visualizar"></i></a></div>
                           <div class="fa-hover col-md-3 col-sm-4 col-xs-12"><a href="#/trash"><i class="fa fa-trash"></i></a></div>
                         </td>
                       </tr>

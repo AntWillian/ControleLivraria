@@ -1,0 +1,65 @@
+
+.modalContainer{
+	width:100vw;
+	height:110vh;
+	background: rgba(0, 0, 0, 0.7);
+	position:absolute;
+  /* margin: auto; */
+	display:none;
+  z-index: 999;
+
+
+
+}
+
+
+a:link{
+    text-decoration: none;
+
+}
+
+
+
+
+.modalAparecer1{
+  width: 100%;
+  height: 100vh;
+  /* margin: auto; */
+  /* background-color: green; */
+  overflow-y: scroll;
+}
+
+
+.modalAparecer1::-webkit-scrollbar {
+  width:10px;
+  /* background:#626262; */
+
+  } /* configurando scroll */
+.modalAparecer1::-webkit-scrollbar-track {
+  /* background: rgba(0,0,0,0.1); */
+}
+
+.modalAparecer1::-webkit-scrollbar-thumb {
+   border-radius:10px;
+    /* background:#288482; */
+   }
+
+   .modalAparecer1::-webkit-scrollbar {
+     width:10px;
+     /* background:#626262; */
+
+     } /* configurando scroll */
+   .modalAparecer1::-webkit-scrollbar-track {
+     /* background: rgba(0,0,0,0.1); */
+   }
+
+   .modalAparecer1::-webkit-scrollbar-thumb {
+      border-radius:10px;
+       /* background:#288482; */
+      }
+
+.tamanho{
+  width: 500px;
+  height: auto;
+  min-height: 500px;
+}
