@@ -248,7 +248,7 @@
           </div>
 
 
-          <button type="button" class="btn btn-success">Novo Livro</button>
+          <button type="button" class="btn btn-success" data-toggle="modal" data-target="#exampleModal">Novo Livro</button>
         </div>
         <!-- /page content -->
 
@@ -262,6 +262,100 @@
         <!-- /footer content -->
       </div>
     </div>
+
+
+    <!-- Modal -->
+    <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+      <div class="modal-dialog" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+              <span aria-hidden="true">&times;</span>
+            </button>
+
+            <h1  id="exampleModalLabel">Novo Livro</h1>
+          </div>
+          <div class="modal-body">
+
+            <form class="Frmlivro" action="../router.php?controller=livro&modo=novo" method="post" enctype="multipart/form-data" >
+
+              <div class="foto_user_cad">
+                  <img id="img" src="" alt="">
+              </div>
+
+              <div class="segura_file_prest">
+                <div class="filePrest">
+                  <input required id="upload" type="file" name="fllivro" >
+                </div>
+              </div>
+
+
+                <div class="form-group">
+                  <label for="inputAddress">Titulo</label>
+                  <input type="text" class="form-control" id="inputAddress" placeholder="Titulo do livro" name="txtTitulo">
+                </div>
+
+                <div class="form-group">
+                  <label for="inputAddress">Autor(a)</label>
+                  <input type="text" class="form-control" id="inputAddress" placeholder="Autor(a) do livro" name="txtAutor">
+                </div>
+
+                <div class="form-group">
+                  <label for="exampleFormControlTextarea1">Descrição</label>
+                  <textarea class="form-control" id="exampleFormControlTextarea1" rows="3" name="txtDescricao"></textarea>
+                </div>
+
+                <div class="form-group">
+                  <label for="inputAddress">Editora</label>
+                  <input type="text" class="form-control" id="inputAddress" placeholder="Editora do livro" name="txtEditora">
+                </div>
+
+                <div class="form-row">
+                 <div class="form-group col-md-6">
+                   <label for="inputPaginas">Numero de paginas</label>
+                   <input type="text" class="form-control" id="inputPaginas" placeholder="Numero de paginas" name="txtNumPagina">
+                 </div>
+                 <div class="form-group col-md-6">
+                   <label for="inputEdicao">Numero da edição</label>
+                   <input type="text" class="form-control" id="inputEdicao" placeholder="Numero da edição" name="txtNumEdicao">
+                 </div>
+               </div>
+
+
+               <div class="form-row">
+                <div class="form-group col-md-6">
+                  <label for="inputAno">Ano de edição</label>
+                  <input type="text" class="form-control" id="inputAno" placeholder="Ano de edição" name="txtAnoEdicao">
+                </div>
+                <div class="form-group col-md-6">
+                  <label for="inputEstoque">No estoque</label>
+                  <input type="text" class="form-control" id="inputEstoque" placeholder="No estoque" name="txtNumEstoque">
+                </div>
+
+                <div class="form-group col-md-6">
+                  <label for="inputEstoque">Preco</label>
+                  <input type="text" class="form-control" id="inputPreco" placeholder="No estoque" name="txtPreco">
+                </div>
+              </div>
+
+              <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                <input type="submit" class="btn btn-primary">Salvar</input>
+              </div>
+
+            </form>
+
+
+
+          </div>
+
+        </div>
+      </div>
+    </div>
+
+
+
 
     <!-- jQuery -->
     <script src="../vendors/jquery/dist/jquery.min.js"></script>

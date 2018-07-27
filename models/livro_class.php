@@ -11,6 +11,7 @@
     public $anoEdicao;
     public $estoque;
     public $preco;
+    public $imagem;
 
     public function __construct(){
        require_once('bd_class.php');
@@ -44,6 +45,8 @@
           $listLivro[$cont]->anoEdicao = $rs['anoEdicao'];
           $listLivro[$cont]->estoque = $rs['estoque'];
           $listLivro[$cont]->preco = $rs['preco'];
+          $listLivro[$cont]->imagem = $rs['imagem'];
+
 
           $cont +=1;
       }
@@ -57,58 +60,31 @@
     }
 
 
+    // CADASTRO DE NOVO Livro
+    public function Insert($dados){
+      $sql="insert into tbl_livro (titulo, autor, descricao, editora, numPaginas, numEdicoes, anoEdicao, estoque, preco, imagem)
+      values('".$dados->titulo."', '".$dados->autor."', '".$dados->descricao."', '".$dados->editora."', '".$dados->numPaginas."',
+      '".$dados->numEdicoes."', '".$dados->anoEdicao."', '".$dados->estoque."', '".$dados->preco."', '".$dados->imagem."')";
 
+    //  echo $sql;
 
-     public function Select($dados){
-      $sql="select * from tbl_curso_tecnico where idCursoTecnico=".$dados->idTecnico;
-      echo $sql;
 
       $conex = new Mysql_db();
 
       $PDO_conex = $conex->Conectar();
 
-      $select = $PDO_conex->query($sql);
 
 
+        if ($PDO_conex->query($sql)) {
+         header("location:index.php");
+        }else{
+          echo "erro";
+        }
 
-      if ($rs=$select->fetch(PDO::FETCH_ASSOC)) {
-        $listTecnico = new Tecnico();
-
-
-
-      $listTecnico->idCursoTecnico = $rs['idCursoTecnico'];
-      $listTecnico->nome= $rs['nome'];
-      $listTecnico->descricao= $rs['descricao'];
-      $listTecnico->imagem= $rs['imagem'];
-      $listTecnico->area= $rs['area'];
-      $listTecnico->duracao= $rs['duracao'];
-      $listTecnico->preRequisitos= $rs['preRequisitos'];
-      $listTecnico->link= $rs['link'];
-      $listTecnico->processoSeletivo= $rs['processoSeletivo'];
-      $listTecnico->dataInicio= $rs['dtInicio'];
-      $listTecnico->dataFim= $rs['dtFim'];
-      $listTecnico->horaInicio= $rs['horaInicio'];
-      $listTecnico->horaFim= $rs['horaFim'];
-      $listTecnico->idCursoTecnico= $rs['idCursoTecnico'];
-
-
-
-
-
-
-
-
-
-
-      }
-
-      $conex->Desconectar();
-
-      if (isset($listTecnico)) {
-          return $listTecnico;
-      }
-
+        $conex->Desconectar();
     }
+
+
 
 
     public function Update($dados){
