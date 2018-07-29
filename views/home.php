@@ -64,6 +64,8 @@
     <link href="../vendors/datatables.net-scroller-bs/css/scroller.bootstrap.min.css" rel="stylesheet">
 
 <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"> </script>
+<script src="js/validacoes"> </script>
+
     <!-- script  -->
 
   <script>
@@ -134,15 +136,20 @@
         //alert(idIten);
           $.ajax({
               type: "GET",
-              url: "router.php?controller=produtos&modo=excluir&idProduto="+idIten,
+              url: "../router.php?controller=livro&modo=excluir&id="+idIten,
               // data: {modo:'excluir',id:idIten},
               success: function(dados){
-                  $('#datatable').html(dados);
-                  //alert ();
+                //  $('#datatable').html(dados);
+                  alert (dados);
+                  location.reload();
               }
           });
         }
       }
+
+
+
+
   </script>
 
 
@@ -282,7 +289,7 @@
                          ?>
                         <td><div class="fa-hover col-md-3 col-sm-4 col-xs-12"><a href="#" class="editar" onclick="Editar(<?php echo $Livro[$cont]->idlivro?>)"><i class="fa fa-edit"></i></a></div>
                           <div class="fa-hover col-md-3 col-sm-4 col-xs-12"><a href="#" onclick="Visualizar(<?php echo $Livro[$cont]->idlivro?>)"><i class="fa fa-eye visualizar"></i></a></div>
-                          <div class="fa-hover col-md-3 col-sm-4 col-xs-12"><a href="#/trash"><i class="fa fa-trash"></i></a></div>
+                          <div class="fa-hover col-md-3 col-sm-4 col-xs-12"><a href="#"  onclick="Excluir(<?php echo $Livro[$cont]->idlivro?>)"><i class="fa fa-trash"></i></a></div>
                         </td>
 
                         <?php

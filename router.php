@@ -23,8 +23,8 @@
             break;
 
       case 'excluir':
-            $controller_Produto= new controllerProduto();
-            $controller_Produto::excluir();
+              $controller_livro= new controllerLivro();
+              $controller_livro::Excluir();
              //echo "string";
           break;
 

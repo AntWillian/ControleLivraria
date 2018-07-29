@@ -171,6 +171,34 @@
               $conex->Desconectar();
     }
 
+
+    public function Delete($dados){
+       $sql="Delete from tbl_livro where idlivro=".$dados->idlivro;
+
+       $conex = new Mysql_db();
+
+       $PDO_conex = $conex->Conectar();
+
+
+
+       if ($PDO_conex->query($sql)) {
+
+           //require_once('views/conteudo_planos.php');
+           echo "Excluido com sucesso";
+           // echo "
+           // <script src='js/jquery7.min.js'></script>
+           // <script  src='js/jcarousellite.js'></script>
+           // <script  src='js/carrossel.js'></script>
+           //     ";
+
+       }else{
+         echo "erro ao deletar";
+       }
+
+       $conex->Desconectar();
+
+     }
+
   }
 
  ?>

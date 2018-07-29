@@ -136,6 +136,18 @@
        }
 
 
+
+      public function Excluir(){
+          $id=$_GET['id'];
+
+          $livro= new Livro();
+
+          $livro->idlivro = $id;
+
+          $livro::Delete($livro);
+      }
+
+
    }
 
 
