@@ -163,6 +163,7 @@
               $PDO_conex = $conex->Conectar();
               if ($PDO_conex->query($sql)) {
                 //echo("<script>location.reload();</script>");
+                header("location:views/home.php");
 
               //  echo "string";
               }else{

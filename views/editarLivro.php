@@ -135,11 +135,11 @@ $imagem = Null;
             <div class="form-row">
              <div class="form-group col-md-6">
                <label for="inputPaginas">Numero de paginas</label>
-               <input type="text" class="form-control" id="inputPaginas" placeholder="Numero de paginas" name="txtNumPagina" value="<?php echo (utf8_decode($numPaginas)) ?>">
+               <input type="text" class="form-control validacao" id="inputPaginas" placeholder="Numero de paginas" name="txtNumPagina" value="<?php echo (utf8_decode($numPaginas)) ?>">
              </div>
              <div class="form-group col-md-6">
                <label for="inputEdicao">Numero da edição</label>
-               <input type="text" class="form-control" id="inputEdicao" placeholder="Numero da edição" name="txtNumEdicao" value="<?php echo (utf8_decode($numEdicoes)) ?>" >
+               <input type="text" class="form-control validacao" id="inputEdicao" placeholder="Numero da edição" name="txtNumEdicao" value="<?php echo (utf8_decode($numEdicoes)) ?>" >
              </div>
            </div>
 
@@ -147,16 +147,16 @@ $imagem = Null;
            <div class="form-row">
             <div class="form-group col-md-6">
               <label for="inputAno">Ano de edição</label>
-              <input type="text" class="form-control" id="inputAno" placeholder="Ano de edição" name="txtAnoEdicao" value="<?php echo (utf8_decode($anoEdicao)) ?>" >
+              <input type="text" class="form-control validacao" id="inputAno" placeholder="Ano de edição" name="txtAnoEdicao" value="<?php echo (utf8_decode($anoEdicao)) ?>" >
             </div>
             <div class="form-group col-md-6">
               <label for="inputEstoque">No estoque</label>
-              <input type="text" class="form-control" id="inputEstoque" placeholder="No estoque" name="txtNumEstoque" value="<?php echo (utf8_decode($estoque)) ?>">
+              <input type="text" class="form-control validacao" id="inputEstoque" placeholder="No estoque" name="txtNumEstoque" value="<?php echo (utf8_decode($estoque)) ?>">
             </div>
 
             <div class="form-group col-md-6">
               <label for="inputEstoque">Preco</label>
-              <input type="text" class="form-control" id="inputPreco" placeholder="No estoque" name="txtPreco" value="<?php echo (utf8_decode($preco)) ?>" >
+              <input type="text" class="form-control" id="inputPreco" placeholder="No estoque" name="txtPreco" value="<?php echo (utf8_decode($preco)) ?>" onKeyPress="return(MascaraMoeda(this,'.',',',event))">
             </div>
           </div>
 

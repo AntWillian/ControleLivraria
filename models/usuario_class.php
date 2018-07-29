@@ -36,10 +36,10 @@
            if ($idUsuario > 0) {
              $_SESSION['idUsuarioLogado'] = $idUsuario;
              header('location:index.php');
-           }else {
-             echo('<script> alert("Falha na autenticação!");
-            window.location.href = "index.php"</script>');
            }
+         }else {
+           echo('<script> alert("Falha na autenticação!");
+          window.location.href = "index.php"</script>');
          }
 
 

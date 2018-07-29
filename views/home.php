@@ -351,7 +351,7 @@
         </div>
         <!-- /page content -->
 
-      
+
         <!-- /footer content -->
       </div>
     </div>
@@ -386,32 +386,32 @@
 
                 <div class="form-group">
                   <label for="inputAddress">Titulo</label>
-                  <input type="text" class="form-control" id="inputAddress" placeholder="Titulo do livro" name="txtTitulo">
+                  <input required type="text" class="form-control" id="inputAddress" placeholder="Titulo do livro" name="txtTitulo">
                 </div>
 
                 <div class="form-group">
                   <label for="inputAddress">Autor(a)</label>
-                  <input type="text" class="form-control" id="inputAddress" placeholder="Autor(a) do livro" name="txtAutor">
+                  <input required type="text" class="form-control" id="inputAddress" placeholder="Autor(a) do livro" name="txtAutor">
                 </div>
 
                 <div class="form-group">
                   <label for="exampleFormControlTextarea1">Descrição</label>
-                  <textarea class="form-control" id="exampleFormControlTextarea1" rows="3" name="txtDescricao"></textarea>
+                  <textarea required class="form-control" id="exampleFormControlTextarea1" rows="3" name="txtDescricao"></textarea>
                 </div>
 
                 <div class="form-group">
                   <label for="inputAddress">Editora</label>
-                  <input type="text" class="form-control" id="inputAddress" placeholder="Editora do livro" name="txtEditora">
+                  <input required type="text" class="form-control" id="inputAddress" placeholder="Editora do livro" name="txtEditora">
                 </div>
 
                 <div class="form-row">
                  <div class="form-group col-md-6">
                    <label for="inputPaginas">Numero de paginas</label>
-                   <input type="text" class="form-control validacao" id="inputPaginas" placeholder="Numero de paginas" name="txtNumPagina"  maxlength="15" >
+                   <input required type="text" class="form-control validacao" id="inputPaginas" placeholder="Numero de paginas" name="txtNumPagina"  maxlength="15" >
                  </div>
                  <div class="form-group col-md-6">
                    <label for="inputEdicao">Numero da edição</label>
-                   <input type="text" class="form-control validacao" id="inputEdicao" placeholder="Numero da edição" name="txtNumEdicao">
+                   <input required type="text" class="form-control validacao" id="inputEdicao" placeholder="Numero da edição" name="txtNumEdicao">
                  </div>
                </div>
 
@@ -419,22 +419,22 @@
                <div class="form-row">
                 <div class="form-group col-md-6">
                   <label for="inputAno">Ano de edição</label>
-                  <input type="text" class="form-control validacao" id="inputAno" placeholder="Ano de edição" name="txtAnoEdicao">
+                  <input required type="text" class="form-control validacao" id="inputAno" placeholder="Ano de edição" name="txtAnoEdicao">
                 </div>
                 <div class="form-group col-md-6">
                   <label for="inputEstoque">No estoque</label>
-                  <input type="text" class="form-control validacao" id="inputEstoque" placeholder="No estoque" name="txtNumEstoque">
+                  <input required type="text" class="form-control validacao" id="inputEstoque" placeholder="No estoque" name="txtNumEstoque">
                 </div>
 
                 <div class="form-group col-md-6">
                   <label for="inputEstoque">Preco</label>
-                  <input type="text" class="form-control" id="inputPreco" placeholder="No estoque" name="txtPreco" onKeyPress="return(MascaraMoeda(this,'.',',',event))" maxlength="5">
+                  <input required type="text" class="form-control" id="inputPreco" placeholder="No estoque" name="txtPreco" onKeyPress="return(MascaraMoeda(this,'.',',',event))" maxlength="5">
                 </div>
               </div>
 
               <div class="modal-footer">
                 <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                <input type="submit" class="btn btn-primary">Salvar</input>
+                <input required type="submit" class="btn btn-primary">Salvar</input>
               </div>
 
             </form>
