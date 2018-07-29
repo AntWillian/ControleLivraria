@@ -62,6 +62,7 @@
           $imagem_file = false;
         }
 
+        echo $diretorio_completo;
 
        $livro ->imagem =$diretorio_completo;
 

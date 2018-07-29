@@ -64,7 +64,7 @@
     <link href="../vendors/datatables.net-scroller-bs/css/scroller.bootstrap.min.css" rel="stylesheet">
 
 <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"> </script>
-<script src="js/validacoes"> </script>
+<script src="../js/validacoes.js"> </script>
 
     <!-- script  -->
 
@@ -351,13 +351,7 @@
         </div>
         <!-- /page content -->
 
-        <!-- footer content -->
-        <footer>
-          <div class="pull-right">
-            Gentelella - Bootstrap Admin Template by <a href="https://colorlib.com">Colorlib</a>
-          </div>
-          <div class="clearfix"></div>
-        </footer>
+      
         <!-- /footer content -->
       </div>
     </div>
@@ -413,11 +407,11 @@
                 <div class="form-row">
                  <div class="form-group col-md-6">
                    <label for="inputPaginas">Numero de paginas</label>
-                   <input type="text" class="form-control" id="inputPaginas" placeholder="Numero de paginas" name="txtNumPagina">
+                   <input type="text" class="form-control validacao" id="inputPaginas" placeholder="Numero de paginas" name="txtNumPagina"  maxlength="15" >
                  </div>
                  <div class="form-group col-md-6">
                    <label for="inputEdicao">Numero da edição</label>
-                   <input type="text" class="form-control" id="inputEdicao" placeholder="Numero da edição" name="txtNumEdicao">
+                   <input type="text" class="form-control validacao" id="inputEdicao" placeholder="Numero da edição" name="txtNumEdicao">
                  </div>
                </div>
 
@@ -425,16 +419,16 @@
                <div class="form-row">
                 <div class="form-group col-md-6">
                   <label for="inputAno">Ano de edição</label>
-                  <input type="text" class="form-control" id="inputAno" placeholder="Ano de edição" name="txtAnoEdicao">
+                  <input type="text" class="form-control validacao" id="inputAno" placeholder="Ano de edição" name="txtAnoEdicao">
                 </div>
                 <div class="form-group col-md-6">
                   <label for="inputEstoque">No estoque</label>
-                  <input type="text" class="form-control" id="inputEstoque" placeholder="No estoque" name="txtNumEstoque">
+                  <input type="text" class="form-control validacao" id="inputEstoque" placeholder="No estoque" name="txtNumEstoque">
                 </div>
 
                 <div class="form-group col-md-6">
                   <label for="inputEstoque">Preco</label>
-                  <input type="text" class="form-control" id="inputPreco" placeholder="No estoque" name="txtPreco">
+                  <input type="text" class="form-control" id="inputPreco" placeholder="No estoque" name="txtPreco" onKeyPress="return(MascaraMoeda(this,'.',',',event))" maxlength="5">
                 </div>
               </div>
 

@@ -8,5 +8,11 @@ session_start();
   // require_once("../index.php");
    header("location:../index.php");
  }
+
+
+ if (isset($_GET['out'])) {
+  session_destroy();
+  header('location:../index.php');
+}
 //  require_once("views/home.php");
 ?>
