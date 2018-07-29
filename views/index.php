@@ -72,10 +72,10 @@
 
         $.ajax({
           type: "GET",
-          url: "cadastro_produto.php",
-          data: {modo:'buscarId',idProduto:idItem},
+          url: "editarLivro.php",
+          data: {modo:'buscarId',idLivro:idItem},
           success: function(dados){
-            $('.modal2').html(dados);
+            $('.modalAparecer1').html(dados);
           }
 
         });
@@ -316,7 +316,7 @@
                         <td><?php echo (utf8_decode($Livro[$cont]->editora)); ?></td>
                         <td><?php echo (utf8_decode($Livro[$cont]->estoque)); ?></td>
                         <td><?php echo (utf8_decode($Livro[$cont]->preco)); ?></td>
-                        <td><div class="fa-hover col-md-3 col-sm-4 col-xs-12"><a href="#/pencil-square-o" class="editar" onclick="Editar(<?php echo $Livro[$cont]->idlivro?>)"><i class="fa fa-edit"></i></a></div>
+                        <td><div class="fa-hover col-md-3 col-sm-4 col-xs-12"><a href="#" class="editar" onclick="Editar(<?php echo $Livro[$cont]->idlivro?>)"><i class="fa fa-edit"></i></a></div>
                           <div class="fa-hover col-md-3 col-sm-4 col-xs-12"><a href="#" onclick="Visualizar(<?php echo $Livro[$cont]->idlivro?>)"><i class="fa fa-eye visualizar"></i></a></div>
                           <div class="fa-hover col-md-3 col-sm-4 col-xs-12"><a href="#/trash"><i class="fa fa-trash"></i></a></div>
                         </td>

@@ -71,10 +71,74 @@
        $livro::Insert($livro);
 
 
+     }
+
+
+     public function Editar() {
+       require_once 'modulo.php';
+       $idLivro=$_GET['idLivro'];
+
+       echo $idLivro;
+
+       $livro = new Livro();
+
+       $livro->idlivro=$_GET['idLivro'];
+
+       $livro ->titulo = $_POST['txtTitulo'];
+       $livro ->autor = $_POST['txtAutor'];
+       $livro ->descricao = $_POST['txtDescricao'];
+
+       $livro ->editora = $_POST['txtEditora'];
+       $livro ->numPaginas = $_POST['txtNumPagina'];
+       $livro ->numEdicoes = $_POST['txtNumEdicao'];
+       $livro ->numPaginas = $_POST['txtNumPagina'];
+       $livro ->anoEdicao = $_POST['txtAnoEdicao'];
+       $livro ->estoque = $_POST['txtNumEstoque'];
+       $livro ->preco = $_POST['txtPreco'];
+
+
+       // iniciado variaveis
+       $diretorio_completo=Null;
+       $MovUpload=false;
+       $imagem_file=Null;
+       $foto="vavavavav";
+
+
+         // Pegando a Foto
+         if (!empty($_FILES['fllivro']['name'])) {
+            $imagem_file = true;
+            $diretorio_completo=salvarFoto($_FILES['fllivro'],'imagensLivro');
+
+            if ($diretorio_completo == "Erro") {
+                echo "<script>
+                    alert('arquivo nao movido');
+                    window.history.go(-1);
+                    </script>";
+                  $MovUpload=false;
+            }else {
+              $MovUpload=true;
+            }
+          }else {
+            $imagem_file = false;
+          }
+
+          if ($imagem_file == true && $MovUpload==true) {
+            $foto =$diretorio_completo;
+          }else {
+            $foto="nada";
+          }
+
+
+         $livro ->imagem =$foto;
+         $livro::Update($livro);
+
+
+       }
+
+
    }
 
 
 
-   }
 
  ?>

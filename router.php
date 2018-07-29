@@ -17,9 +17,9 @@
             break;
 
         case 'editar':
-              $controller_Produto= new controllerProduto();
-              $controller_Produto::editar();
-               //echo "string";
+              $controller_livro= new controllerLivro();
+              $controller_livro::Editar();
+               echo "router";
             break;
 
       case 'excluir':

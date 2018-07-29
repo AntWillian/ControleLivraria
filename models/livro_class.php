@@ -90,7 +90,7 @@
          $listLivro->imagem = $rs['imagem'];
 
 
-         
+
      }
 
      $conex->Desconectar();
@@ -128,39 +128,37 @@
 
 
 
-
+// Atualizar Registro
     public function Update($dados){
+
+      echo "  string";
       if ($dados->imagem == "nada") {
-        $sql = "UPDATE tbl_curso_tecnico SET
-        nome = '".$dados->nome."',
+        $sql = "UPDATE tbl_livro SET
+        titulo = '".$dados->titulo."',
+        autor = '".$dados->autor."',
         descricao = '".$dados->descricao."',
-        area = '".$dados->area."',
-        duracao = '".$dados->duracao."',
-        preRequisitos = '".$dados->preRequisitos."',
-        link = '".$dados->link."',
-        processoSeletivo =0,
-        dtInicio = '".$dados->dataInicio."',
-        dtFim = '".$dados->dataFim."',
-        horaInicio = '".$dados->horaInicio."',
-        horaFim = '".$dados->horaFim."'
-        WHERE idCursoTecnico = ".$dados->idCursoTecnico;
+        editora = '".$dados->editora."',
+        numPaginas = '".$dados->numPaginas."',
+        numEdicoes = '".$dados->numEdicoes."',
+        anoEdicao ='".$dados->anoEdicao."',
+        estoque = '".$dados->estoque."',
+        preco = '".$dados->preco."'
+        WHERE idLivro = ".$dados->idlivro;
       }else {
-        $sql = "UPDATE tbl_curso_tecnico SET
-        nome = '".$dados->nome."',
+        $sql = "UPDATE tbl_livro SET
+        titulo = '".$dados->titulo."',
+        autor = '".$dados->autor."',
         descricao = '".$dados->descricao."',
-        area = '".$dados->area."',
-        duracao = '".$dados->duracao."',
-        preRequisitos = '".$dados->preRequisitos."',
-        link = '".$dados->link."',
-        processoSeletivo = 0,
-        dtInicio = '".$dados->dataInicio."',
-        dtFim = '".$dados->dataFim."',
-        horaInicio = '".$dados->horaInicio."',
-        horaFim = '".$dados->horaFim."',
+        editora = '".$dados->editora."',
+        numPaginas = '".$dados->numPaginas."',
+        numEdicoes = '".$dados->numEdicoes."',
+        anoEdicao ='".$dados->anoEdicao."',
+        estoque = '".$dados->estoque."',
+        preco = '".$dados->preco."',
         imagem = '".$dados->imagem."'
-        WHERE idCursoTecnico = ".$dados->idCursoTecnico;
+        WHERE idLivro = ".$dados->idlivro;
       }
-            //   echo $sql;
+              echo $sql;
               $conex = new Mysql_db();
               $PDO_conex = $conex->Conectar();
               if ($PDO_conex->query($sql)) {
