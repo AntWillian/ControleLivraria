@@ -32,5 +32,24 @@
       }
 
 
+      case 'usuario':
+
+      require_once("controller/usuario_controller.php");
+      require_once("models/usuario_class.php");
+
+
+      switch ($_GET['modo']) {
+
+        case 'login':
+              $controller_usuario= new controllerUsuario();
+              $controller_usuario::login();
+               //echo "string";
+            break;
+
+
+
+      }
+
+
     }
  ?>

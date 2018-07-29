@@ -1,3 +1,28 @@
+<?php
+  require_once 'validacao.php';
+
+  if (isset($_SESSION['idUsuarioLogado'])) {
+    $idUser=$_SESSION['idUsuarioLogado'];
+
+    require_once ('../controller/usuario_controller.php');
+    require_once ('../models/usuario_class.php');
+    //instacia a controller
+    //Passa o id para a controller
+    $controller_user= new controllerUsuario();
+
+    $retornoModel=$controller_user::listarUserPorId($idUser);
+
+    $idUsuario=$retornoModel->idUsuario;
+    $nomeUser=$retornoModel->nomeUser;
+    $cpf=$retornoModel->cpf;
+    $senha=$retornoModel->senha;
+    $foto=$retornoModel->foto;
+    $idNivel=$retornoModel->idNivel;
+
+  }
+ ?>
+
+
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -8,7 +33,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
 	<link rel="icon" href="images/favicon.ico" type="image/ico" />
 
-    <title>Gentelella Alela! | </title>
+    <title>Livraria </title>
     <script  src="../js/jquery-3.3.1.min.js"></script>
     <!-- Bootstrap -->
     <link href="../vendors/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet">
@@ -38,7 +63,7 @@
     <link href="../vendors/datatables.net-responsive-bs/css/responsive.bootstrap.min.css" rel="stylesheet">
     <link href="../vendors/datatables.net-scroller-bs/css/scroller.bootstrap.min.css" rel="stylesheet">
 
-
+<script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"> </script>
     <!-- script  -->
 
   <script>
@@ -67,6 +92,10 @@
 
 
       });
+
+      function mensagem() {
+        swal ( "Atenção!!" , " Você não tem tem esta permissão" , "warning" )   ;
+      }
 
       function Editar(idItem){
 
@@ -108,7 +137,7 @@
               url: "router.php?controller=produtos&modo=excluir&idProduto="+idIten,
               // data: {modo:'excluir',id:idIten},
               success: function(dados){
-                  $('.dadosDaMovimentacao').html(dados);
+                  $('#datatable').html(dados);
                   //alert ();
               }
           });
@@ -140,11 +169,11 @@
             <!-- menu profile quick info -->
             <div class="profile clearfix">
               <div class="profile_pic">
-                <img src="images/img.jpg" alt="..." class="img-circle profile_img">
+                <img src="<?php echo ("../".utf8_decode($foto)); ?>" alt="..." class="img-circle profile_img">
               </div>
               <div class="profile_info">
-                <span>Welcome,</span>
-                <h2>John Doe</h2>
+                <span>Bem Vindo,</span>
+                <h2><?php echo (utf8_decode($nomeUser)); ?></h2>
               </div>
             </div>
             <!-- /menu profile quick info -->
@@ -154,11 +183,11 @@
             <!-- sidebar menu -->
             <div id="sidebar-menu" class="main_menu_side hidden-print main_menu">
               <div class="menu_section">
-                <h3>General</h3>
+                <h3>Geral</h3>
                 <ul class="nav side-menu">
                   <li><a><i class="fa fa-home"></i> Home <span class="fa fa-chevron-down"></span></a>
                     <ul class="nav child_menu">
-                      <li><a href="index.php">Livros</a></li>
+                      <li><a href="home.php">Livros</a></li>
 
                     </ul>
                   </li>
@@ -184,86 +213,16 @@
               <ul class="nav navbar-nav navbar-right">
                 <li class="">
                   <a href="javascript:;" class="user-profile dropdown-toggle" data-toggle="dropdown" aria-expanded="false">
-                    <img src="images/img.jpg" alt="">John Doe
+                    <img src="<?php echo ("../".utf8_decode($foto)); ?>" alt=""><?php echo (utf8_decode($nomeUser)); ?>
                     <span class=" fa fa-angle-down"></span>
                   </a>
                   <ul class="dropdown-menu dropdown-usermenu pull-right">
-                    <li><a href="javascript:;"> Profile</a></li>
-                    <li>
-                      <a href="javascript:;">
-                        <span class="badge bg-red pull-right">50%</span>
-                        <span>Settings</span>
-                      </a>
-                    </li>
-                    <li><a href="javascript:;">Help</a></li>
-                    <li><a href="login.html"><i class="fa fa-sign-out pull-right"></i> Log Out</a></li>
+
+                    <li><a href="?out"><i class="fa fa-sign-out pull-right"></i> Sair</a></li>
                   </ul>
                 </li>
 
-                <li role="presentation" class="dropdown">
-                  <a href="javascript:;" class="dropdown-toggle info-number" data-toggle="dropdown" aria-expanded="false">
-                    <i class="fa fa-envelope-o"></i>
-                    <span class="badge bg-green">6</span>
-                  </a>
-                  <ul id="menu1" class="dropdown-menu list-unstyled msg_list" role="menu">
-                    <li>
-                      <a>
-                        <span class="image"><img src="images/img.jpg" alt="Profile Image" /></span>
-                        <span>
-                          <span>John Smith</span>
-                          <span class="time">3 mins ago</span>
-                        </span>
-                        <span class="message">
-                          Film festivals used to be do-or-die moments for movie makers. They were where...
-                        </span>
-                      </a>
-                    </li>
-                    <li>
-                      <a>
-                        <span class="image"><img src="images/img.jpg" alt="Profile Image" /></span>
-                        <span>
-                          <span>John Smith</span>
-                          <span class="time">3 mins ago</span>
-                        </span>
-                        <span class="message">
-                          Film festivals used to be do-or-die moments for movie makers. They were where...
-                        </span>
-                      </a>
-                    </li>
-                    <li>
-                      <a>
-                        <span class="image"><img src="images/img.jpg" alt="Profile Image" /></span>
-                        <span>
-                          <span>John Smith</span>
-                          <span class="time">3 mins ago</span>
-                        </span>
-                        <span class="message">
-                          Film festivals used to be do-or-die moments for movie makers. They were where...
-                        </span>
-                      </a>
-                    </li>
-                    <li>
-                      <a>
-                        <span class="image"><img src="images/img.jpg" alt="Profile Image" /></span>
-                        <span>
-                          <span>John Smith</span>
-                          <span class="time">3 mins ago</span>
-                        </span>
-                        <span class="message">
-                          Film festivals used to be do-or-die moments for movie makers. They were where...
-                        </span>
-                      </a>
-                    </li>
-                    <li>
-                      <div class="text-center">
-                        <a>
-                          <strong>See All Alerts</strong>
-                          <i class="fa fa-angle-right"></i>
-                        </a>
-                      </div>
-                    </li>
-                  </ul>
-                </li>
+
               </ul>
             </nav>
           </div>
@@ -316,10 +275,34 @@
                         <td><?php echo (utf8_decode($Livro[$cont]->editora)); ?></td>
                         <td><?php echo (utf8_decode($Livro[$cont]->estoque)); ?></td>
                         <td><?php echo (utf8_decode($Livro[$cont]->preco)); ?></td>
+
+                        <?php
+                          if ($idNivel==1) {
+
+                         ?>
                         <td><div class="fa-hover col-md-3 col-sm-4 col-xs-12"><a href="#" class="editar" onclick="Editar(<?php echo $Livro[$cont]->idlivro?>)"><i class="fa fa-edit"></i></a></div>
                           <div class="fa-hover col-md-3 col-sm-4 col-xs-12"><a href="#" onclick="Visualizar(<?php echo $Livro[$cont]->idlivro?>)"><i class="fa fa-eye visualizar"></i></a></div>
                           <div class="fa-hover col-md-3 col-sm-4 col-xs-12"><a href="#/trash"><i class="fa fa-trash"></i></a></div>
                         </td>
+
+                        <?php
+                        // code...
+                      }else if($idNivel == 2){
+
+
+                         ?>
+
+
+
+                         <td><div class="fa-hover col-md-3 col-sm-4 col-xs-12"><a href="#"  onclick="mensagem()"><i class="fa fa-edit"></i></a></div>
+                           <div class="fa-hover col-md-3 col-sm-4 col-xs-12"><a href="#" onclick="Visualizar(<?php echo $Livro[$cont]->idlivro?>)"><i class="fa fa-eye visualizar"></i></a></div>
+                           <div class="fa-hover col-md-3 col-sm-4 col-xs-12"><a href="#/trash" onclick="mensagem()"><i class="fa fa-trash"></i></a></div>
+                         </td>
+
+                         <?php
+                           }
+
+                          ?>
                       </tr>
 
                       <?php
@@ -335,8 +318,29 @@
 
           </div>
 
+          <?php
+            if ($idNivel==1) {
 
-          <button type="button" class="btn btn-success" data-toggle="modal" data-target="#exampleModal">Novo Livro</button>
+           ?>
+           <button type="button" class="btn btn-success" data-toggle="modal" data-target="#exampleModal">Novo Livro</button>
+
+
+          <?php
+          // code...
+        }else if($idNivel == 2){
+
+
+           ?>
+
+
+
+           <button type="button" class="btn btn-success" onclick="mensagem()">Novo Livro</button>
+
+
+           <?php
+             }
+
+            ?>
         </div>
         <!-- /page content -->
 

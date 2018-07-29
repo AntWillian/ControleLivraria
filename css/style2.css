@@ -1,0 +1,574 @@
+.cor1{
+  background-color: #DADADA;
+}
+
+.cor2{
+    background-color:#AFAFAF;
+}
+
+.corSaida{
+  background-color: #ff969b;
+}
+
+.corEntrada{
+    background-color:#b6f794;
+}
+
+.msg{
+  color: red;
+  font-size: 10px;
+}
+body{
+  margin: 0px;
+  padding: 0px;
+}
+
+header{
+  width: 100%;
+  height: 50px;
+  background-color: #000;
+  padding-top: 4px;
+  padding-bottom: 5px;
+}
+
+.imagem{
+  width: 5%;
+  height: 100%;
+  /* background-color: blue; */
+  margin-left: 2%;
+  float: left;
+}
+
+.imagem img{
+  width: 100%;
+  height: 100%;
+}
+
+.espaco{
+  width: 70%;
+  height: 100%;
+  /* background-color: red; */
+  float: left;
+}
+
+.dadosUser{
+  width: 20%;
+  height: 100%;
+  /* background-color: purple; */
+  float: left;
+}
+
+.nome{
+  width: 90%;
+  margin-left: 5%;
+  height: 50%;
+  margin-top: 5%;
+  /* background-color: red; */
+}
+
+.imgUser{
+  width: 10%;
+  height: 100%;
+  margin-left: 2%;
+  margin-right: 2%;
+  /* background-color: blue; */
+  float: left;
+}
+
+.nomeUser{
+  width: 80%;
+  height: 100%;
+  line-height: 2%;
+}
+
+.nomeUser p{
+  padding-top: 13px;
+  margin: 0px;
+  color: #fff;
+}
+
+/* Princpal */
+
+.Principal{
+  width: 100%;
+  height: 100vh;
+  /* background-color: blue; */
+}
+
+.menu{
+  width: 20%;
+  height: 100%;
+  background-color: #000;
+  float: left;
+}
+
+
+/* MENU */
+
+
+.titulo_menu{
+  width: 100%;
+  height: 5%;
+  background-color: #1f211f;
+    margin-top: 2%;
+
+}
+
+.titulo_menu p{
+  margin: 0;
+  /* padding-top: 3%;
+  padding-left: 5%; */
+  font-size: 150%;
+  color: #DADADA;
+
+}
+
+.imagemMenu{
+  width: 15%;
+  height: 100%;
+  padding-left: 4%;
+  float: left;
+
+}
+
+.imagemMenu img{
+  width: 100%;
+  height: 100%;
+
+}
+
+.nomeMenu{
+  width: 68%;
+  height: 100%;
+  float: left;
+  /* background-color: purple; */
+  padding-left: 2%;
+}
+
+.nomeMenu p a{
+
+  color: #DADADA;
+  text-decoration: none;
+
+}
+
+.sairDDD{
+  width: 50px;
+  height: 40px;
+  float: left;
+  margin-left: 170px;
+  margin-top:-20px;
+}
+
+.item_menu{
+  width: 100%;
+  height: 5%;
+  /*border-bottom: 2px solid #2E353F;*/
+}
+
+.legenda{
+  width: 100%;
+  height: 20px;
+  /* background-color: red; */
+}
+
+.legenda1{
+  width: 100px;
+  height: 20px;
+  /* background-color: blue; */
+  float: left;
+  /* margin-left: 50px; */
+}
+
+.quradrado{
+  width: 30px;
+  height: 20px;
+  float: left;
+  background-color: #31db2b;
+  margin-left: 2px;
+}
+
+
+.quradrado2{
+  width: 30px;
+  height: 20px;
+  float: left;
+  background-color: #d83838;
+  margin-left: 2px;
+}
+
+.item_menu:hover{
+border-left: 5px solid #0400fc;
+width: 98%;
+}
+
+.item_menu p{
+  margin: 0px;
+  padding-left: 20%;
+  font-size: 120%;
+
+}
+
+.item_menu a{
+  text-decoration: none;
+  color: #fff;
+}
+
+.padrao{
+  width: 100%;
+  height: 100vh;
+  /*background-color: red;*/
+}
+
+
+/* CONTEUDO */
+
+.conteudo_produtos{
+  width: 80%;
+  height: 91vh;
+  /* background-color: green; */
+  float: left;
+}
+
+/* Gerenciamento de produtos */
+
+.conteudo_produtos2{
+  width: 100%;
+  height: 91vh;
+  /* background-color: blue; */
+  float: left;
+}
+
+.botoes{
+  width: 100%;
+  height: 10%;
+  /* background-color: purple; */
+}
+
+.novoProduto{
+  width: 90px;
+  height: 50px;
+  /* background-color: green; */
+  border-radius: 10px;
+}
+
+
+ .modal2{
+	width:80%;
+	height:100%;
+
+
+	/* background-color:#fff; */
+	/* margin:auto; */
+  /*margin-left: auto;
+  margin-right: auto;*/
+
+}
+
+.modalContainer{
+	width:100%;
+	height:100vh;
+	background: rgba(0, 0, 0, 0.7);
+	position:fixed;
+  /* margin: auto; */
+	display:none;
+  z-index: 999;
+
+}
+
+.cadastro_produto{
+  width: 100%;
+  height: auto;
+  min-height: 100px;
+  overflow: hidden;
+  /* background-color: red; */
+}
+
+/* Grafico */
+
+
+
+.barraEntrada{
+  /* width: 70px; */
+  height: 20px;
+  background-color:
+#31db2b;
+  margin-bottom: 2px;
+  /* float: left; */
+margin-left: 70px;
+
+}
+
+.barraSaida{
+  /* width: 50%; */
+  height: 20px;
+  background-color: #d83838;
+  margin-bottom: 10px;
+  /* float: left; */
+margin-left: 70px;
+}
+
+.datas{
+  width: 70px;
+  height: 20px;
+  /* background-color: #cacaca; */
+  margin-bottom: 2px;
+  float: left;
+  font-size: 10px;
+  padding-top: 5px;
+  text-align: center;
+}
+
+.barraPesquisa{
+  float: left;
+}
+
+.grafico{
+  width: 45%;
+  height: 100%;
+  margin-top: 10px;
+  margin-left: 10px;
+  /* background-color: red; */
+  float: left;
+}
+
+.dadosGraficos{
+  width: 50%;
+  height: 500px;
+  float: left;
+  /* background-color: purple; */
+  float: left;
+
+
+}
+
+.dadosGeral{
+  width: 100%;
+  height: 80%;
+  /* background-color: red; */
+  float: left;
+}
+
+.dadosDaMovimentacao{
+  height: 450px;
+  width: 100%;
+  background-color: #fff;
+  margin: auto;
+  overflow-y: scroll;
+}
+
+
+.dadosDaMovimentacao::-webkit-scrollbar {
+  width:10px;
+  background:#e3e0d6;
+
+  } /* configurando scroll */
+.dadosDaMovimentacao::-webkit-scrollbar-track {
+  background: rgba(0,0,0,0.1);
+}
+
+.dadosDaMovimentacao::-webkit-scrollbar-thumb {
+   border-radius:10px;
+    background:#8b8778;
+   }
+
+.margin{
+  margin-left: 20px;
+}
+
+/* GERAL */
+
+/* LOGINUSUARIO */
+
+.containerLogo{
+    width: 250px;
+    height: 100px;
+    /*margin-top: 150px;
+    margin-right: auto;
+     margin-left: auto;*/
+    margin: 0 auto;
+    top: 20%;
+    position: absolute;
+    left: 50%;
+    margin-left: -125px;
+}
+
+.form-groupDir{
+    margin-left: 0px;
+    float: left;
+}
+
+.backLeft {
+  position: absolute;
+  left: 0;
+  width: 50%;
+  height: 100%;
+  background: #6bb27d;
+  background-image:url(../imagens/loginPaciente.png);
+  background-size: cover;
+  background-position: 50% 50%;
+}
+
+#back {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  z-index: -999;
+}
+
+#slideBox {
+  width: 50%;
+  max-height: 100%;
+  height: 100%;
+  overflow: hidden;
+  margin-left: 50%;
+  position: absolute;
+  box-shadow: 0 14px 28px rgba(0,0,0,0.25), 0 10px 10px rgba(0,0,0,0.22);
+}
+.topLayer {
+  width: 200%;
+  height: 100%;
+  position: relative;
+  left: 0;
+  left: -100%;
+}
+
+.left {
+  width: 50%;
+  height: 100%;
+  background: #2C3034;
+  left: 0;
+  position: absolute;
+}
+
+.right {
+  width: 50%;
+  height: 100%;
+  background: #f9f9f9;
+  right: 0;
+  position: absolute;
+}
+
+.content {
+  width: 250px;
+  margin: 0 auto;
+  top: 30%;
+  position: absolute;
+  left: 50%;
+  margin-left: -125px;
+}
+
+.content h2 {
+  color: #6bb27d;
+  font-weight: 300;
+  font-size: 35px;
+}
+
+button {
+  background: #6bb27d;
+  padding: 10px 16px;
+  width: auto;
+  font-weight: 600;
+  text-transform:  uppercase;
+  font-size: 14px;
+  color: #fff;
+  line-height: 16px;
+  letter-spacing: 0.5px;
+  border-radius: 2px;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.1), 0 3px 6px rgba(0,0,0,0.1);
+  border: 0;
+  outline: 0;
+  margin: 15px 15px 15px 0;
+  transition: all 0.25s;
+}
+
+button:hover {
+  background: #43704e;
+  box-shadow: 0 4px 7px rgba(0,0,0,0.1), 0 3px 6px rgba(0,0,0,0.1);
+    color: #eee;
+}
+.off {
+  background-color: none;
+  color: #6bb27d;
+  box-shadow: none;
+}
+
+.right .off:hover {
+  background: #eee;
+  color: #6bb27d;
+  box-shadow: none;
+}
+.left .off:hover {
+  box-shadow: none;
+  color: #6bb27d;
+  background: #363A3D;
+}
+
+input{
+    border-radius: 10px;
+    height: 30px;
+    margin-top: 20px;
+    border: solid 2px #6bb27d;
+    outline: none;
+    width: 250px;
+    padding: 2px;
+}
+
+/* LOGIN RESPONSIVO */
+  #principal_login {
+    width: auto;
+    max-width: 380px;
+    margin-left: auto;
+    margin-right: auto;
+    /* background-color: #ccc; */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 100px;
+    border: solid 2px #6bb27d;
+  }
+
+  #principal_login h1 {
+    color: #6bb27d;
+  }
+
+  #principal_login a {
+    text-decoration: none;
+    color: #6bb27d;
+    height: 25px;
+    padding: 5px;
+  }
+
+  #principal_login a:hover {
+    color: #555;
+  }
+
+  #principal_login input {
+    border-radius: 10px;
+    height: 25px;
+    margin-top: 20px;
+    border: solid 2px #6bb27d;
+    background-color: #fff;
+    outline: none;
+    width: 250px;
+  }
+
+  #principal_login input[type=submit] {
+    height: 30px;
+    width: 100px;
+    border-radius: 0;
+    margin-left: 30%;
+    color: #6bb27d;
+    margin-bottom: 20px;
+  }
+
+  #principal_login input[type=submit]:hover {
+    background-color: #43704e;
+    color: #43704e;
+    border: solid 1px #43704e;
+    cursor: pointer;
+  }
+
+  .backLeft{
+    background-image: url(../imagems/livraria-paroquial.jpg);
+  }

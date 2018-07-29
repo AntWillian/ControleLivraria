@@ -1,4 +1,6 @@
-
+.ui-pnotify .dark .ui-pnotify-fade-normal .ui-pnotify-move .ui-pnotify-in .ui-pnotify-fade-in{
+	display: block;
+}
 .modalContainer{
 	width:100vw;
 	height:110vh;
